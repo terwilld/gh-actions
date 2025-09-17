@@ -13,10 +13,10 @@ jobs:
           echo "This is a log message."        
       - name: Make a GET request to SWAPI
         run: |
-          curl https://swapi.dev/api/people/2
+          #curl https://swapi.dev/api/people/2
           response=$(curl -isL https://swapi.dev/api/people/2)
           
           # Print the entire response to the workflow log.
-          echo "::group::Curl Response Output"
+          #echo "::group::Curl Response Output"
           echo "$response"
-          echo "::endgroup::"
+          #echo "::endgroup::"
