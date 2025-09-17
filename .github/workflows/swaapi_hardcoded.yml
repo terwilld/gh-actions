@@ -14,7 +14,7 @@ jobs:
       - name: Make a GET request to SWAPI
         run: |
           #curl https://swapi.dev/api/people/2
-          response=$(curl -isL https://swapi.dev/api/people/2)
+          response=$(curl -sL https://swapi.dev/api/people/2)
           
           # Print the entire response to the workflow log.
           #echo "::group::Curl Response Output"
