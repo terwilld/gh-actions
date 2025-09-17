@@ -1,0 +1,13 @@
+name: Curl SWAPI Endpoint
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-curl-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make a GET request to SWAPI
+        run: |
+          curl https://swapi.dev/api/people/2
