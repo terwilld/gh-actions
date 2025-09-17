@@ -1,4 +1,4 @@
-name: Curl SWAPI Endpoint
+name: Curl SWAPI Endpoint Hardcode
 
 on:
   workflow_dispatch:
