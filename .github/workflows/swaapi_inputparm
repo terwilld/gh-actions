@@ -1,0 +1,27 @@
+name: Curl SWAPI Endpoint with User Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      person_id:
+        description: 'The ID of the Star Wars character to retrieve (e.g., 1, 2, 3)'
+        required: true
+        default: '1'
+        type: string
+
+jobs:
+  send-curl-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log the selected ID
+        run: |
+          echo "Retrieving data for person ID: ${{ inputs.person_id }}"
+
+      - name: Make a GET request to SWAPI
+        run: |
+          # Use the user-provided input parameter in the curl command
+          response=$(curl -sL https://swapi.dev/api/people/${{ inputs.person_id }})
+          
+          # Print the entire response to the workflow log.
+          echo "$response"
